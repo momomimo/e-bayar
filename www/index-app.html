@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>E - B A Y A R | Data Transaksi</title>
+    <meta name="description" content="Aplikasi Pembayaran & Pembelian Secara Online">
+    <meta name="author" content="Sutrimo 16.01.53.0183">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0">
+
+    <link rel="icon" type="image/png" href="assets/homepage/images/favicon.png">
+    <link rel="stylesheet" href="assets/admin/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/admin/css/plugins.css">
+    <link rel="stylesheet" href="assets/admin/css/main.css">
+    <link rel="stylesheet" href="assets/admin/css/themes.css">
+    <link rel="stylesheet" href="css/datatables.css" />
+</head>
+
+<body>
+    <div id="page-wrapper">
+        <div class="preloader themed-background">
+            <h1 class="push-top-bottom text-light text-center"><strong>Pro</strong>UI</h1>
+            <div class="inner">
+                <h3 class="text-light visible-lt-ie10"><strong>Loading..</strong></h3>
+                <div class="preloader-spinner hidden-lt-ie10"></div>
+            </div>
+        </div>
+        <div id="page-container" class="sidebar-mini sidebar-visible-lg-mini sidebar-no-animations">
+            <div id="sidebar">
+                <div id="sidebar-scroll">
+                    <div class="sidebar-content">
+                        <a href="index.html" class="sidebar-brand">
+                            <i class="fa fa-bitcoin"></i><span class="sidebar-nav-mini-hide"><strong>EB
+                                </strong>Monitoring</span>
+                        </a>
+                        <ul class="sidebar-nav">
+                            <li>
+                                <a href=""><i class="gi gi-stopwatch sidebar-nav-icon"></i>
+                                    <span class="sidebar-nav-mini-hide">Navigation</span></a>
+                            </li>
+                            <li class="active">
+                                <a href="#" class="sidebar-nav-menu"><i
+                                        class="fa fa-angle-left sidebar-nav-indicator sidebar-nav-mini-hide"></i><i
+                                        class="gi gi-notes_2 sidebar-nav-icon"></i><span
+                                        class="sidebar-nav-mini-hide">Master Data</span></a>
+                                <ul>
+                                    <li class="active">
+                                        <a class="active" href="index-app.html">Data Terminal</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div id="main-container">
+                <header class="navbar navbar-default">
+                    <ul class="nav navbar-nav-custom">
+                        <li>
+                            <a href="javascript:void(0)" onclick="App.sidebar('toggle-sidebar');this.blur();">
+                                <i class="fa fa-bars fa-fw"></i>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <ul class="nav navbar-nav-custom pull-right">
+
+                        <li class="dropdown">
+                            <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
+                                <img src="assets/admin/img/1.jpg" alt="avatar"><i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-custom dropdown-menu-right">
+                                <li class="dropdown-header text-center">Account</li>
+                                <li class="text-center">Sutrimo 16.01.53.0183</li>
+                                <li>
+                                    <a href="index.html"><i class="fa fa-ban fa-fw pull-right"></i> Logout</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </header>
+                <div id="page-content">
+                    <div class="content-header">
+                        <div class="header-section">
+                            <h1>
+                                <i class="gi gi-notes_2"></i>Data Terminal Mitra E-Bayar
+                            </h1>
+                        </div>
+                    </div>
+                    <ul class="breadcrumb breadcrumb-top">
+                        <li>Master Data</li>
+                        <li><a href="">Data Terminal</a></li>
+                    </ul>
+                    <div class="block">
+                        <h3 class="sub-header"><strong>Data Terminal </strong></h3>
+                        <div class="row">
+                            <div class="btn-group" role="group">
+                                <button type="button" class="btn btn-alt btn-sm btn-info" data-toggle="modal"
+                                    data-target="#tambah">
+                                    <i class="fa fa-plus"></i> Tambah Data
+                                </button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="table-responsive">
+                                <table class="table table-vcenter table-bordered table-hover" id="tabeldata">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" class="text-center">No</th>
+                                            <th scope="col" class="text-center">Terminal ID</th>
+                                            <th scope="col" class="text-center">Jenis</th>
+                                            <th scope="col" class="text-center">Nama Payment Point</th>
+                                            <th scope="col" class="text-center">Alamat Mitra</th>
+                                            <th scope="col" class="text-center">Bank</th>
+                                            <th scope="col" class="text-center">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tampildata">
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <footer class="clearfix">
+                    <div class="pull-right">
+                        Crafted with <i class="fa fa-heart text-danger"></i> by Sutrimo 16.01.53.0183
+                    </div>
+
+                </footer>
+
+
+            </div>
+        </div>
+    </div>
+    <a href="#" id="to-top"><i class="fa fa-angle-double-up"></i></a>
+    <!--Modal Tambah-->
+    <div id="tambah" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h2 class="modal-title"><i class="fa fa-pencil"></i> Tambah Data</h2>
+                </div>
+                <div class="modal-body">
+                    <form action="" method="post" id="form-tambah" enctype="multipart/form-data"
+                        class="form-horizontal form-bordered" onsubmit="return false;">
+                        <fieldset>
+                            <legend> Masukan Data Dengan Benar</legend>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label" for="id_produk">ID Terminal :</label>
+                                <div class="col-md-9">
+                                    <input type="text" id="id" name="id" class="form-control" placeholder="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label" for="id_produk">Jenis :</label>
+                                <div class="col-md-9">
+                                    <input type="text" id="jenis" name="jenis" class="form-control" placeholder="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label" for="id_produk">Nama Mitra :</label>
+                                <div class="col-md-9">
+                                    <input type="text" id="nama" name="nama" class="form-control" placeholder="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label" for="id_produk">Alamat Mitra :</label>
+                                <div class="col-md-9">
+                                    <input type="text" id="alamat" name="alamat" class="form-control" placeholder="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label" for="id_produk">Bank Switching :</label>
+                                <div class="col-md-9">
+                                    <input type="text" id="bank" name="bank" class="form-control" placeholder="">
+                                </div>
+                            </div>
+                            <legend><small class="text-danger">Pastikan lagi Data yang di tambahkan sudah Benar</small>
+                            </legend>
+                        </fieldset>
+                        <div class="form-group form-actions">
+                            <div class="col-xs-12 text-right">
+                                <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-sm btn-primary" id="btn-tambah">Simpan</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Modal Tambah-->
+    <!--Modal Edit-->
+    <div id="edit" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h2 class="modal-title"><i class="fa fa-pencil"></i> Edit Data</h2>
+                </div>
+                <div class="modal-body " id="edit-data">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Modal Edit-->
+    <!--Modal Hapus-->
+    <div id="hapus" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h2 class="modal-title"><i class="fa fa-pencil"></i> Hapus Data</h2>
+                </div>
+                <div class="modal-body " id="hapus-data">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Modal Hapus-->
+
+    <script src="assets/admin/js/vendor/jquery.min.js"></script>
+    <script src="assets/admin/js/vendor/bootstrap.min.js"></script>
+    <script src="js/geturi.js"></script>
+    <script src="assets/admin/js/plugins.js"></script>
+    <script src="assets/admin/js/app.js"></script>
+    <script src="js/jquery.dataTables.js"></script>
+    <script src="js/datatables.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var url = "http://localhost/restapi-mobile/rest-server/idterminal";
+            $.getJSON(url, function (result) {
+                console.log(result['data']);
+                var no = 1;
+                $.each(result['data'], function (i, field) {
+                    var id = field.id;
+                    var jenis = field.jenis;
+                    var nama = field.nama_pp;
+                    var alamat = field.alamat_pp;
+                    var bank = field.switching;
+                    $("#tampildata").append(`
+                        <tr>
+                            <td class="text-center">` + no++ + `</td>
+                            <td class="text-center">` + id + `</td>
+                            <td class="text-center">` + jenis + `</td>
+                            <td>` + nama + `</td>
+                            <td>` + alamat + `</td>
+                            <td class="text-center">` + bank + `</td>
+                            <td class="text-center">
+								<button type="button" class="btn btn-warning item_edit" name="item_edit" title="Edit" data-toggle="modal" id="` + id + `" onclick=""><i class="fa fa-edit"></i></button>
+								<button type="button" class="btn btn-danger item_hapus"  title="Hapus" data-toggle="modal"` + id + `"><i class="fa fa-times"></i></button>
+							</td>
+                        </tr>      
+                        
+                    `);
+                });
+                $('#tabeldata').DataTable();
+
+            });
+            $("#btn-tambah").click(function () {
+
+                //do ajax proses
+                $.ajax({
+
+                    url: "http://localhost/restapi-mobile/rest-server/idterminal",
+                    type: "POST",
+                    data: $("#form-tambah").serialize(),
+                    dataType: "JSON",
+                    beforeSend: function () {
+                        $(".loading").html("Please wait....");
+
+                    },
+                    success: function (result) {
+
+                        if (result.status) {
+
+                            alert("Sukses, Data berhasil ditambahkan");
+                            window.location.href =
+                                "http://localhost/restapi-mobile/client-android/www/index-app.html";
+
+                        } else {
+
+                            alert("Error, Data Gagal ditambahkan");
+                        }
+
+                    },
+                    error: function (xhr, Status, err) {
+
+                        $("Data Kurang Lengkap : " + Status);
+                    }
+
+                });
+
+                return false;
+            });
+            $(document).on('click','.item_edit', function(){
+                var id = $(this).attr('id');
+                console.log(id);
+                $.ajax({
+                    type: "GET",
+                    url: "http://localhost/restapi-mobile/rest-server/idterminal",
+                    dataType: "JSON",
+                    data: {
+                        id: id
+                    },
+                    success: function (data) {
+                        console.log(data['data']);
+                        $.each(data['data'], function (i,field) {
+                            $('#edit').modal('show');
+                            var id = field.id;
+                            var jenis = field.jenis;
+                            var nama = field.nama_pp;
+                            var alamat = field.alamat_pp;
+                            var bank = field.switching;
+                            $("#edit-data").append(`
+                            <form action="" method="post" id="form-edit" enctype="multipart/form-data"
+                                class="form-horizontal form-bordered" onsubmit="return false;">
+                                <fieldset>
+                                    <legend> Masukan Data Dengan Benar</legend>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label" for="id_produk">ID Terminal :</label>
+                                        <div class="col-md-9">
+                                            <input type="text" readonly id="id" name="id" class="form-control" value="`+id+`">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label" for="id_produk">Jenis :</label>
+                                        <div class="col-md-9">
+                                            <input type="text" id="jenis" name="jenis" class="form-control" value="`+jenis+`">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label" for="id_produk">Nama Mitra :</label>
+                                        <div class="col-md-9">
+                                            <input type="text" id="nama" name="nama" class="form-control" value="`+nama+`">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label" for="id_produk">Alamat Mitra :</label>
+                                        <div class="col-md-9">
+                                            <input type="text" id="alamat" name="alamat" class="form-control" value="`+alamat+`">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label" for="id_produk">Bank Switching :</label>
+                                        <div class="col-md-9">
+                                            <input type="text" id="bank" name="bank" class="form-control" value="`+bank+`">
+                                        </div>
+                                    </div>
+                                    <legend><small class="text-danger">Pastikan lagi Data yang di tambahkan sudah Benar</small>
+                                    </legend>
+                                </fieldset>
+                                <div class="form-group form-actions">
+                                    <div class="col-xs-12 text-right">
+                                        <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn btn-sm btn-primary" id="btn-edit">Simpan</button>
+                                    </div>
+                                </div>
+                            </form>
+                            `);
+                            
+                        });
+                    }
+                });
+                return false;
+            });
+            $(document).on('click','#btn-edit', function(){
+            var data =   $("#form-edit").serialize();
+            console.log(data);
+            //do ajax proses
+            $.ajax({
+
+                url: "http://localhost/restapi-mobile/rest-server/idterminal",
+                type: "PUT",
+                data: $("#form-edit").serialize(),
+                dataType: "JSON",
+                beforeSend: function () {
+                    $(".loading").html("Please wait....");
+
+                },
+                success: function (result) {
+
+                    if (result.status) {
+
+                        alert("Sukses, Data berhasil dirubah");
+                        window.location.href =
+                            "http://localhost/restapi-mobile/client-android/www/index-app.html";
+
+                    } else {
+
+                        alert("Error, Data gagal dirubah");
+                    }
+
+                },
+                error: function (xhr, Status, err) {
+
+                    $("Data Kurang Lengkap : " + Status);
+                }
+
+            });
+
+            return false;
+            });
+            $(document).on('click','.item_hapus', function(){
+                var id = $(this).attr('id');
+                console.log(id);
+                $.ajax({
+                    type: "GET",
+                    url: "http://localhost/restapi-mobile/rest-server/idterminal",
+                    dataType: "JSON",
+                    data: {
+                        id: id
+                    },
+                    success: function (data) {
+                        console.log(data['data']);
+                        $.each(data['data'], function (i,field) {
+                            $('#hapus').modal('show');
+                            var id = field.id;
+                            var nama = field.nama_pp;
+                            $("#hapus-data").append(`
+                            <form action="" method="post" id="form-hapus" enctype="multipart/form-data"
+                                class="form-horizontal form-bordered" onsubmit="return false;">
+                                <fieldset>
+                                    <div class="form-group">
+                                        <h3 class="text-center">Apakah Anda Yakin Menghapus Data Ini?</h3>
+                                        <p class="text-center">`+nama+`</p>
+                                    </div>
+                                </fieldset>
+                                <div class="form-group form-actions">
+                                    <div class="col-xs-12 text-right">
+                                        <input type="hidden" id="id" name="id" class="form-control" value="`+id+`">
+                                        <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn btn-sm btn-primary" id="btn-hapus">Simpan</button>
+                                    </div>
+                                </div>
+                            </form>
+                            `);
+                            
+                        });
+                    }
+                });
+                return false;
+            });
+            $(document).on('click','#btn-hapus', function(){
+            var data =   $("#form-hapus").serialize();
+            console.log(data);
+            //do ajax proses
+            $.ajax({
+
+                url: "http://localhost/restapi-mobile/rest-server/idterminal",
+                type: "DELETE",
+                data: $("#form-hapus").serialize(),
+                dataType: "JSON",
+                beforeSend: function () {
+                    $(".loading").html("Please wait....");
+
+                },
+                success: function (result) {
+
+                    if (result.status) {
+
+                        alert("Sukses, Data berhasil dihapus");
+                        window.location.href =
+                            "http://localhost/restapi-mobile/client-android/www/index-app.html";
+
+                    } else {
+
+                        alert("Error, Data gagal dihapus");
+                    }
+
+                },
+                error: function (xhr, Status, err) {
+
+                    $("Data Kurang Lengkap : " + Status);
+                }
+
+            });
+
+            return false;
+            });
+
+        });
+    </script>
+</body>
+
+</html>
