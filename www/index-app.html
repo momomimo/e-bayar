@@ -232,7 +232,7 @@
     <script src="js/datatables.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
-            var url = "http://cahayaaqila.id/rest-server/idterminal";
+            var url = "http://pkl.notaxcloth.com/mimo/restfull-api/idterminal";
             $.getJSON(url, function (result) {
                 console.log(result['data']);
                 var no = 1;
@@ -266,7 +266,7 @@
                 //do ajax proses
                 $.ajax({
 
-                    url: "http://cahayaaqila.id/rest-server/idterminal",
+                    url: "http://pkl.notaxcloth.com/mimo/restfull-api/idterminal",
                     type: "POST",
                     data: $("#form-tambah").serialize(),
                     dataType: "JSON",
@@ -302,7 +302,7 @@
                 console.log(id);
                 $.ajax({
                     type: "GET",
-                    url: "http://cahayaaqila.id/rest-server/idterminal",
+                    url: "http://pkl.notaxcloth.com/mimo/restfull-api/idterminal",
                     dataType: "JSON",
                     data: {
                         id: id
@@ -374,7 +374,7 @@
             //do ajax proses
             $.ajax({
 
-                url: "http://cahayaaqila.id/rest-server/idterminal",
+                url: "http://pkl.notaxcloth.com/mimo/restfull-api/idterminal",
                 type: "PUT",
                 data: $("#form-edit").serialize(),
                 dataType: "JSON",
@@ -410,7 +410,7 @@
                 console.log(id);
                 $.ajax({
                     type: "GET",
-                    url: "http://cahayaaqila.id/rest-server/idterminal",
+                    url: "http://pkl.notaxcloth.com/mimo/restfull-api/idterminal",
                     dataType: "JSON",
                     data: {
                         id: id
@@ -451,7 +451,7 @@
             //do ajax proses
             $.ajax({
 
-                url: "http://cahayaaqila.id/rest-server/idterminal",
+                url: "http://pkl.notaxcloth.com/mimo/restfull-api/idterminal",
                 type: "DELETE",
                 data: $("#form-hapus").serialize(),
                 dataType: "JSON",
