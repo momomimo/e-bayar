@@ -232,7 +232,7 @@
     <script src="js/datatables.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
-            var url = "http://localhost/restapi-mobile/rest-server/idterminal";
+            var url = "http://cahayaaqila.id/rest-server/idterminal";
             $.getJSON(url, function (result) {
                 console.log(result['data']);
                 var no = 1;
@@ -266,7 +266,7 @@
                 //do ajax proses
                 $.ajax({
 
-                    url: "http://localhost/restapi-mobile/rest-server/idterminal",
+                    url: "http://cahayaaqila.id/rest-server/idterminal",
                     type: "POST",
                     data: $("#form-tambah").serialize(),
                     dataType: "JSON",
@@ -280,7 +280,7 @@
 
                             alert("Sukses, Data berhasil ditambahkan");
                             window.location.href =
-                                "http://localhost/restapi-mobile/client-android/www/index-app.html";
+                                "index-app.html";
 
                         } else {
 
@@ -302,7 +302,7 @@
                 console.log(id);
                 $.ajax({
                     type: "GET",
-                    url: "http://localhost/restapi-mobile/rest-server/idterminal",
+                    url: "http://cahayaaqila.id/rest-server/idterminal",
                     dataType: "JSON",
                     data: {
                         id: id
@@ -374,7 +374,7 @@
             //do ajax proses
             $.ajax({
 
-                url: "http://localhost/restapi-mobile/rest-server/idterminal",
+                url: "http://cahayaaqila.id/rest-server/idterminal",
                 type: "PUT",
                 data: $("#form-edit").serialize(),
                 dataType: "JSON",
@@ -388,7 +388,7 @@
 
                         alert("Sukses, Data berhasil dirubah");
                         window.location.href =
-                            "http://localhost/restapi-mobile/client-android/www/index-app.html";
+                            "index-app.html";
 
                     } else {
 
@@ -410,7 +410,7 @@
                 console.log(id);
                 $.ajax({
                     type: "GET",
-                    url: "http://localhost/restapi-mobile/rest-server/idterminal",
+                    url: "http://cahayaaqila.id/rest-server/idterminal",
                     dataType: "JSON",
                     data: {
                         id: id
@@ -451,7 +451,7 @@
             //do ajax proses
             $.ajax({
 
-                url: "http://localhost/restapi-mobile/rest-server/idterminal",
+                url: "http://cahayaaqila.id/rest-server/idterminal",
                 type: "DELETE",
                 data: $("#form-hapus").serialize(),
                 dataType: "JSON",
@@ -465,7 +465,7 @@
 
                         alert("Sukses, Data berhasil dihapus");
                         window.location.href =
-                            "http://localhost/restapi-mobile/client-android/www/index-app.html";
+                            "index-app.html";
 
                     } else {
 
