@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>E - B A Y A R | Data Transaksi</title>
+    <title>E - B A Y A R | Data Terminal</title>
     <meta name="description" content="Aplikasi Pembayaran & Pembelian Secara Online">
     <meta name="author" content="Sutrimo 16.01.53.0183">
     <meta name="robots" content="noindex, nofollow">
@@ -202,7 +202,50 @@
                     <h2 class="modal-title"><i class="fa fa-pencil"></i> Edit Data</h2>
                 </div>
                 <div class="modal-body " id="edit-data">
-                    
+                    <form action="" method="post" id="form-edit" enctype="multipart/form-data"
+                    class="form-horizontal form-bordered" onsubmit="return false;">
+                    <fieldset>
+                        <legend> Masukan Data Dengan Benar</legend>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label" for="id_produk">ID Terminal :</label>
+                            <div class="col-md-9">
+                                <input type="text" readonly id="ide" name="id" class="form-control" placeholder="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label" for="id_produk">Jenis :</label>
+                            <div class="col-md-9">
+                                <input type="text" id="jenise" name="jenis" class="form-control" placeholder="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label" for="id_produk">Nama Mitra :</label>
+                            <div class="col-md-9">
+                                <input type="text" id="namae" name="nama" class="form-control" placeholder="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label" for="id_produk">Alamat Mitra :</label>
+                            <div class="col-md-9">
+                                <input type="text" id="alamate" name="alamat" class="form-control" placeholder="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label" for="id_produk">Bank Switching :</label>
+                            <div class="col-md-9">
+                                <input type="text" id="banke" name="bank" class="form-control" placeholder="">
+                            </div>
+                        </div>
+                        <legend><small class="text-danger">Pastikan lagi Data yang di tambahkan sudah Benar</small>
+                        </legend>
+                    </fieldset>
+                    <div class="form-group form-actions">
+                        <div class="col-xs-12 text-right">
+                            <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-sm btn-primary" id="btn-edit">Simpan</button>
+                        </div>
+                    </div>
+                </form>               
                 </div>
             </div>
         </div>
@@ -216,7 +259,20 @@
                     <h2 class="modal-title"><i class="fa fa-pencil"></i> Hapus Data</h2>
                 </div>
                 <div class="modal-body " id="hapus-data">
-                    
+                    <form action="" method="post" id="form-hapus" enctype="multipart/form-data" class="form-horizontal form-bordered" onsubmit="return false;">
+                        <fieldset>
+                            <div class="form-group">
+                                <h3 class="text-center">Apakah Anda Yakin Menghapus Data Ini?</h3>
+                            </div>
+                        </fieldset>
+                        <div class="form-group form-actions">
+                            <div class="col-xs-12 text-right">
+                                <input type="hidden" id="idh" name="id" class="form-control">
+                                <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-sm btn-primary" id="btn-hapus">Simpan</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -232,74 +288,68 @@
     <script src="js/datatables.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
-            var url = "http://pkl.notaxcloth.com/mimo/restfull-api/idterminal";
-            $.getJSON(url, function (result) {
-                console.log(result['data']);
-                var no = 1;
-                $.each(result['data'], function (i, field) {
-                    var id = field.id;
-                    var jenis = field.jenis;
-                    var nama = field.nama_pp;
-                    var alamat = field.alamat_pp;
-                    var bank = field.switching;
-                    $("#tampildata").append(`
-                        <tr>
-                            <td class="text-center">` + no++ + `</td>
-                            <td class="text-center">` + id + `</td>
-                            <td class="text-center">` + jenis + `</td>
-                            <td>` + nama + `</td>
-                            <td>` + alamat + `</td>
-                            <td class="text-center">` + bank + `</td>
-                            <td class="text-center">
-								<button type="button" class="btn btn-warning item_edit" name="item_edit" title="Edit" data-toggle="modal" id="` + id + `" onclick=""><i class="fa fa-edit"></i></button>
-								<button type="button" class="btn btn-danger item_hapus"  title="Hapus" data-toggle="modal"` + id + `"><i class="fa fa-times"></i></button>
-							</td>
-                        </tr>      
-                        
-                    `);
-                });
-                $('#tabeldata').DataTable();
-
-            });
-            $("#btn-tambah").click(function () {
-
-                //do ajax proses
+            tampiltabeldata();
+            function tampiltabeldata()
+            {
                 $.ajax({
-
+                    url: "http://pkl.notaxcloth.com/mimo/restfull-api/idterminal",
+                    type: "GET",
+                    dataType: "JSON",
+                    success: function(data) {
+                        console.log(data['data']);
+                        var no = 1;
+                        $.each(data['data'], function (i, field) {
+                            var id = field.id;
+                            var jenis = field.jenis;
+                            var nama = field.nama_pp;
+                            var alamat = field.alamat_pp;
+                            var bank = field.switching;
+                            $("#tampildata").append(`
+                                <tr>
+                                    <td class="text-center">` + no++ + `</td>
+                                    <td class="text-center">` + id + `</td>
+                                    <td class="text-center">` + jenis + `</td>
+                                    <td>` + nama + `</td>
+                                    <td>` + alamat + `</td>
+                                    <td class="text-center">` + bank + `</td>
+                                    <td class="text-center">
+                                        <button type="button" class="btn btn-warning item_edit" name="item_edit" title="Edit" data-toggle="modal" id="` + id + `" onclick=""><i class="fa fa-edit"></i></button>
+                                        <button type="button" class="btn btn-danger item_hapus"  title="Hapus" data-toggle="modal"id="` + id + `"><i class="fa fa-times"></i></button>
+                                    </td>
+                                </tr> 
+                            `);                           
+                        });
+                        $('#tabeldata').DataTable(); 
+                    }
+                });
+                
+            }
+            $("#btn-tambah").click(function () {
+                $.ajax({
                     url: "http://pkl.notaxcloth.com/mimo/restfull-api/idterminal",
                     type: "POST",
                     data: $("#form-tambah").serialize(),
                     dataType: "JSON",
-                    beforeSend: function () {
-                        $(".loading").html("Please wait....");
-
-                    },
                     success: function (result) {
-
                         if (result.status) {
-
                             alert("Sukses, Data berhasil ditambahkan");
+                            $('#tambah').modal('hide');
                             window.location.href =
-                                "index-app.html";
-
+                            "index-app.html";
                         } else {
-
                             alert("Error, Data Gagal ditambahkan");
                         }
-
                     },
                     error: function (xhr, Status, err) {
-
                         $("Data Kurang Lengkap : " + Status);
                     }
-
                 });
-
                 return false;
-            });
+                });
             $(document).on('click','.item_edit', function(){
                 var id = $(this).attr('id');
                 console.log(id);
+
                 $.ajax({
                     type: "GET",
                     url: "http://pkl.notaxcloth.com/mimo/restfull-api/idterminal",
@@ -310,101 +360,45 @@
                     success: function (data) {
                         console.log(data['data']);
                         $.each(data['data'], function (i,field) {
-                            $('#edit').modal('show');
                             var id = field.id;
                             var jenis = field.jenis;
                             var nama = field.nama_pp;
                             var alamat = field.alamat_pp;
                             var bank = field.switching;
-                            $("#edit-data").append(`
-                            <form action="" method="post" id="form-edit" enctype="multipart/form-data"
-                                class="form-horizontal form-bordered" onsubmit="return false;">
-                                <fieldset>
-                                    <legend> Masukan Data Dengan Benar</legend>
-                                    <div class="form-group">
-                                        <label class="col-md-3 control-label" for="id_produk">ID Terminal :</label>
-                                        <div class="col-md-9">
-                                            <input type="text" readonly id="id" name="id" class="form-control" value="`+id+`">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-3 control-label" for="id_produk">Jenis :</label>
-                                        <div class="col-md-9">
-                                            <input type="text" id="jenis" name="jenis" class="form-control" value="`+jenis+`">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-3 control-label" for="id_produk">Nama Mitra :</label>
-                                        <div class="col-md-9">
-                                            <input type="text" id="nama" name="nama" class="form-control" value="`+nama+`">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-3 control-label" for="id_produk">Alamat Mitra :</label>
-                                        <div class="col-md-9">
-                                            <input type="text" id="alamat" name="alamat" class="form-control" value="`+alamat+`">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-3 control-label" for="id_produk">Bank Switching :</label>
-                                        <div class="col-md-9">
-                                            <input type="text" id="bank" name="bank" class="form-control" value="`+bank+`">
-                                        </div>
-                                    </div>
-                                    <legend><small class="text-danger">Pastikan lagi Data yang di tambahkan sudah Benar</small>
-                                    </legend>
-                                </fieldset>
-                                <div class="form-group form-actions">
-                                    <div class="col-xs-12 text-right">
-                                        <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
-                                        <button type="submit" class="btn btn-sm btn-primary" id="btn-edit">Simpan</button>
-                                    </div>
-                                </div>
-                            </form>
-                            `);
-                            
+                            $('[id="ide"]').val(id);
+                            $('[id="jenise"]').val(jenis);
+                            $('[id="namae"]').val(nama);
+                            $('[id="alamate"]').val(alamat);
+                            $('[id="banke"]').val(bank);
                         });
+                        $('#edit').modal('show');
+                    }
+                });
+            });
+            $(document).on('click','#btn-edit', function(){
+                var data =   $("#form-edit").serialize();
+                console.log(data);
+                $.ajax({
+                    url: "http://pkl.notaxcloth.com/mimo/restfull-api/idterminal",
+                    type: "PUT",
+                    data: $("#form-edit").serialize(),
+                    dataType: "JSON",
+                    success: function (result) {
+                        if (result.status) {
+                            alert("Sukses, Data berhasil dirubah");
+                            $('#edit').modal('hide');
+                            window.location.href =
+                            "index-app.html";
+                        } else {
+                            alert("Error, Data Gagal dirubah");
+                        }
+                    },
+                    error: function (xhr, Status, err) {
+                        $("Data Kurang Lengkap : " + Status);
                     }
                 });
                 return false;
-            });
-            $(document).on('click','#btn-edit', function(){
-            var data =   $("#form-edit").serialize();
-            console.log(data);
-            //do ajax proses
-            $.ajax({
-
-                url: "http://pkl.notaxcloth.com/mimo/restfull-api/idterminal",
-                type: "PUT",
-                data: $("#form-edit").serialize(),
-                dataType: "JSON",
-                beforeSend: function () {
-                    $(".loading").html("Please wait....");
-
-                },
-                success: function (result) {
-
-                    if (result.status) {
-
-                        alert("Sukses, Data berhasil dirubah");
-                        window.location.href =
-                            "index-app.html";
-
-                    } else {
-
-                        alert("Error, Data gagal dirubah");
-                    }
-
-                },
-                error: function (xhr, Status, err) {
-
-                    $("Data Kurang Lengkap : " + Status);
-                }
-
-            });
-
-            return false;
-            });
+                });
             $(document).on('click','.item_hapus', function(){
                 var id = $(this).attr('id');
                 console.log(id);
@@ -418,71 +412,39 @@
                     success: function (data) {
                         console.log(data['data']);
                         $.each(data['data'], function (i,field) {
-                            $('#hapus').modal('show');
                             var id = field.id;
                             var nama = field.nama_pp;
-                            $("#hapus-data").append(`
-                            <form action="" method="post" id="form-hapus" enctype="multipart/form-data"
-                                class="form-horizontal form-bordered" onsubmit="return false;">
-                                <fieldset>
-                                    <div class="form-group">
-                                        <h3 class="text-center">Apakah Anda Yakin Menghapus Data Ini?</h3>
-                                        <p class="text-center">`+nama+`</p>
-                                    </div>
-                                </fieldset>
-                                <div class="form-group form-actions">
-                                    <div class="col-xs-12 text-right">
-                                        <input type="hidden" id="id" name="id" class="form-control" value="`+id+`">
-                                        <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
-                                        <button type="submit" class="btn btn-sm btn-primary" id="btn-hapus">Simpan</button>
-                                    </div>
-                                </div>
-                            </form>
-                            `);
-                            
+                            $('[id="idh"]').val(id);
+                            $('[id="namah"]').val(nama);
                         });
+                        $('#hapus').modal('show');
+                    }
+                });
+            });
+            $(document).on('click','#btn-hapus', function(){
+                var data =   $("#form-hapus").serialize();
+                console.log(data);
+                $.ajax({
+                    url: "http://pkl.notaxcloth.com/mimo/restfull-api/idterminal",
+                    type: "DELETE",
+                    data: $("#form-hapus").serialize(),
+                    dataType: "JSON",
+                    success: function (result) {
+                        if (result.status) {
+                            alert("Sukses, Data berhasil dihapus");
+                            $('#hapus').modal('hide');
+                            window.location.href =
+                            "index-app.html";
+                        } else {
+                            alert("Error, Data Gagal dihapus");
+                        }
+                    },
+                    error: function (xhr, Status, err) {
+                        $("Data Kurang Lengkap : " + Status);
                     }
                 });
                 return false;
-            });
-            $(document).on('click','#btn-hapus', function(){
-            var data =   $("#form-hapus").serialize();
-            console.log(data);
-            //do ajax proses
-            $.ajax({
-
-                url: "http://pkl.notaxcloth.com/mimo/restfull-api/idterminal",
-                type: "DELETE",
-                data: $("#form-hapus").serialize(),
-                dataType: "JSON",
-                beforeSend: function () {
-                    $(".loading").html("Please wait....");
-
-                },
-                success: function (result) {
-
-                    if (result.status) {
-
-                        alert("Sukses, Data berhasil dihapus");
-                        window.location.href =
-                            "index-app.html";
-
-                    } else {
-
-                        alert("Error, Data gagal dihapus");
-                    }
-
-                },
-                error: function (xhr, Status, err) {
-
-                    $("Data Kurang Lengkap : " + Status);
-                }
-
-            });
-
-            return false;
-            });
-
+                });
         });
     </script>
 </body>
