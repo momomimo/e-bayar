@@ -4,8 +4,8 @@
     <description>
         Monitoring Admin untuk Aplikasi E-Bayar.
     </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
+    <author email="jejakdigital.com" href="http://momomimo.id">
+        Jejak Digital Team
     </author>
     <content src="index.html" />
     <plugin name="cordova-plugin-whitelist" spec="1" />
@@ -18,7 +18,12 @@
     <allow-intent href="geo:*" />
     <platform name="android">
         <allow-intent href="market:*" />
-        <icon src="www/assets/homepage/images/favicon.png" density="mdpi" />
+        <icon src="www/assets/homepage/images/icon36.png" density="ldpi" />
+        <icon src="www/assets/homepage/images/icon48.png" density="mdpi" />
+        <icon src="www/assets/homepage/images/icon72.png" density="hdpi" />
+        <icon src="www/assets/homepage/images/icon96.png" density="xhdpi" />
+        <icon src="www/assets/homepage/images/icon144.png" density="xxdpi" />
+        <icon src="www/assets/homepage/images/icon192.png" density="xxxdpi" />
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
