@@ -428,7 +428,7 @@
                     url: "http://pkl.notaxcloth.com/mimo/restfull-api/idterminal",
                     type: "DELETE",
                     data: $("#form-hapus").serialize(),
-                    dataType: "JSON",
+                    dataType: "JSONP",
                     success: function (result) {
                         if (result.status) {
                             alert("Sukses, Data berhasil dihapus");
