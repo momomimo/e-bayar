@@ -349,7 +349,6 @@
             $(document).on('click','.item_edit', function(){
                 var id = $(this).attr('id');
                 console.log(id);
-
                 $.ajax({
                     type: "GET",
                     url: "http://pkl.notaxcloth.com/mimo/restfull-api/idterminal",
@@ -433,8 +432,7 @@
                         if (result.status) {
                             alert("Sukses, Data berhasil dihapus");
                             $('#hapus').modal('hide');
-                            window.location.href =
-                            "index-app.html";
+                            
                         } else {
                             alert("Error, Data Gagal dihapus");
                         }

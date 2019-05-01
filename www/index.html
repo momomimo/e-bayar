@@ -1,566 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="no-js" lang="en">
 
 <head>
-    <!-- Required meta tags-->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Aplikasi Sistem Keanggotaan">
-    <meta name="author" content="Lenny Estika Sari 16.01.53.0137">
-    <meta name="keywords" content="SISTEM KEANGGOTAAN">
 
-    <!-- Title Page-->
-    <title>Dashboard</title>
+	<meta charset="utf-8">
+	<title>E - B A Y A R | MobileApps</title>
+	<meta name="description" content="Aplikasi Pembayaran & Pembelian Secara Online">
+	<meta name="author" content="Sutrimo 16.01.53.0183">
 
-    <!-- Fontfaces CSS-->
-    <link href="css/font-face.css" rel="stylesheet" media="all">
-    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
-    <link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
-    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="icon" type="image/png" href="assets/homepage/images/favicon.png">
 
-    <!-- Bootstrap CSS-->
-    <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
-
-    <!-- Vendor CSS-->
-    <link href="vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
-    <link href="vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
-    <link href="vendor/wow/animate.css" rel="stylesheet" media="all">
-    <link href="vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
-    <link href="vendor/slick/slick.css" rel="stylesheet" media="all">
-    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
-    <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
-
-    <!-- Main CSS-->
-    <link href="css/theme.css" rel="stylesheet" media="all">
+	<link rel="stylesheet" href="assets/homepage/css/base.css">
+	<link rel="stylesheet" href="assets/homepage/css/main.css">
+	<link rel="stylesheet" href="assets/homepage/css/vendor.css">
 
 </head>
 
-<body class="animsition">
-    <div class="page-wrapper">
-        <!-- HEADER MOBILE-->
-        <header class="header-mobile d-block d-lg-none">
-            <div class="header-mobile__bar">
-                <div class="container-fluid">
-                    <div class="header-mobile-inner">
-                        <a class="logo" href="index.html">
-                            <h1>Koperasi Maju Jaya</h1>
-                        </a>
-                        <button class="hamburger hamburger--slider" type="button">
-                            <span class="hamburger-box">
-                                <span class="hamburger-inner"></span>
-                            </span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <nav class="navbar-mobile">
-                <div class="container-fluid">
-                    <ul class="navbar-mobile__list list-unstyled">
-                        <li class="has-sub">
-                            <a class="js-arrow" href="#">
-                        <li>
-                            <a href="table.html">
-                                <i class="fas fa-users"></i>Anggota</a>
-                        </li>
-                </div>
-            </nav>
-        </header>
-        <!-- END HEADER MOBILE-->
+<body id="top">
 
-        <!-- MENU SIDEBAR-->
-        <aside class="menu-sidebar d-none d-lg-block">
-            <div class="logo">
-                <a href="#">
-                    <img src="images/icon/koperasi1.png" alt="koperasi1" />
-                </a>
-            </div>
-            <div class="menu-sidebar__content js-scrollbar1">
-                <nav class="navbar-sidebar">
-                    <ul class="list-unstyled navbar__list">
-                        <li>
-                            <a href="table.html">
-                                <i class="fas fa-users"></i>Anggota</a>
-                        </li>
-                    </ul>
+	<header>
+		<div class="row">
 
-                </nav>
-            </div>
-        </aside>
-        <!-- END MENU SIDEBAR-->
+			<div class="top-bar">
+				<div class="logo">
+					<a href="index.html">E-BAYAR</a>
+				</div>
+			</div>
+		</div>
+	</header>
+	<section id="intro">
 
-        <!-- PAGE CONTAINER-->
-        <div class="page-container">
-            <!-- HEADER DESKTOP-->
-            <header class="header-desktop">
-                <div class="section__content section__content--p30">
-                    <div class="container-fluid">
-                        <div class="header-wrap pull-right">
+		<div class="intro-overlay"></div>
 
-                            <div class="header-button">
-                                <div class="account-wrap">
-                                    <div class="account-item clearfix js-item-menu">
-                                        <div class="image">
-                                            <img src="images/icon/avatar-01.jpg" alt="Lenny Estika Sari" />
-                                        </div>
-                                        <div class="content">
-                                            <a class="js-acc-btn" href="#">Lenny Estika Sari</a>
-                                        </div>
-                                        <div class="account-dropdown js-dropdown">
-                                            <div class="info clearfix">
-                                                <div class="image">
-                                                    <a href="#">
-                                                        <img src="images/icon/avatar-01.jpg" alt="Lenny Estika Sari" />
-                                                    </a>
-                                                </div>
-                                                <div class="content">
-                                                    <h5 class="name">
-                                                        <a href="#">Lenny Estika Sari</a>
-                                                    </h5>
-                                                    <span class="email">16.01.53.0137</span>
-                                                </div>
-                                            </div>
+		<div class="intro-content">
+			<div class="row">
 
-                                            <div class="account-dropdown__footer">
-                                                <a href="#">
-                                                    <i class="zmdi zmdi-power"></i>Logout</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </header>
-            <!-- HEADER DESKTOP-->
+				<div class="col-twelve">
 
-            <!-- MAIN CONTENT-->
-            <div class="main-content">
-                <div class="section__content section__content--p30">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <h2 class="title-1 m-b-25">Data Anggota Koperasi Maju Jaya</h2>
-                            <div class="col-lg-12">
-                                <button class="au-btn au-btn-icon au-btn--blue pull-right m-b-10" data-toggle="modal"
-                                    data-target="#tambah">
-                                    <i class="zmdi zmdi-plus"></i>Tambah Data</button>
-                                <div class="table-responsive table--no-card m-b-40">
-                                    <table class="table table-borderless table-striped table-earning">
-                                        <thead>
-                                            <tr>
-                                                <th>No</th>
-                                                <th>ID Anggota</th>
-                                                <th>ID Identitas</th>
-                                                <th class="text-center">Nama</th>
-                                                <th class="text-center">Alamat</th>
-                                                <th class="text-center">Tanggal Masuk</th>
-                                                <th class="text-center">Tanggal Lahir</th>
-                                                <th class="text-center">Kontak</th>
-                                                <th class="text-center">Jabatan</th>
-                                                <th class="text-center">Status Kepegawaian</th>
-                                                <th class="text-center">Salary</th>
-                                                <th class="text-center">Status Anggota</th>
-                                                <th class="text-center">Action</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody id="showdata">
+					<h5>SATU APLIKASI UNTUK SEMUA PEMBAYARAN & PEMBELIAN</h5>
+					<h1>E - B A Y A R</h1>
 
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
+					<p class="intro-position">
+						<span>PLN TELKOM PDAM FINANCE</span>
+						<span>PULSA VOUCHER</span>
+						<span>TIKET PESAWAT KERETA BUS</span>
+					</p>
 
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="copyright">
-                                <p>Copyright © 2018 Estika. by <a href="https://colorlib.com">Lenny Estika Sari</a>.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
-    <div id="tambah" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header text-center">
-                    <h2 class="modal-title"><i class="fas fa-pen"></i> Tambah Data</h2>
-                </div>
-                <div class="modal-body">
-                    <form action="" method="post" id="form-tambah" enctype="multipart/form-data"
-                        class="form-horizontal form-bordered" onsubmit="return false;">
-                        <fieldset>
-                            <div class="form-group">
-                                <label class="col-md-3 control-label" for="id_produk">ID Anggota :</label>
-                                <div class="col-md-9">
-                                    <input type="text" id="id" name="ida" class="form-control" placeholder="">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-3 control-label" for="id_produk">Identitas Anggota :</label>
-                                <div class="col-md-9">
-                                    <input type="text" id="idi" name="idi" class="form-control" placeholder="">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-3 control-label" for="id_produk">Nama Anggota :</label>
-                                <div class="col-md-9">
-                                    <input type="text" id="na" name="na" class="form-control" placeholder="">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-3 control-label" for="id_produk">Tanggal Masuk :</label>
-                                <div class="col-md-9">
-                                    <input type="date" id="tglm" name="tm" class="form-control datepicker"
-                                        placeholder="">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-3 control-label" for="id_produk">Tanggal Lahir :</label>
-                                <div class="col-md-9">
-                                    <input type="date" id="tgll" name="tl" class="form-control datepicker"
-                                        placeholder="">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-3 control-label" for="id_produk">Alamat :</label>
-                                <div class="col-md-9">
-                                    <input type="text" id="alamat" name="alt" class="form-control" placeholder="">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-3 control-label" for="id_produk">No Telp :</label>
-                                <div class="col-md-9">
-                                    <input type="text" id="tlp" name="nt" class="form-control" placeholder="">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-3 control-label" for="id_produk">Jabatan:</label>
-                                <div class="col-md-9">
-                                    <input type="text" id="jabatan" name="jn" class="form-control" placeholder="">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-3 control-label" for="id_produk">Status Pegawai :</label>
-                                <div class="col-md-9">
-                                    <input type="text" id="spegawai" name="sp" class="form-control"
-                                        placeholder="Tetap/Outsourching">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-3 control-label" for="id_produk">Salary :</label>
-                                <div class="col-md-9">
-                                    <input type="text" id="estimasib" name="eb" class="form-control" placeholder="">
-                                </div>
-                            </div>
+					<a class="button stroke" href="index-app.html" title="Login">Go To App</a>
 
-                        </fieldset>
-                        <div class="form-group form-actions">
-                            <div class="col-xs-12 text-right">
-                                <input type="hidden" id="statusa" name="sa" value="1" class="form-control">
-                                <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
-                                <button type="submit" class="btn btn-sm btn-primary" id="btn-tambah">Simpan</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="edit" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header text-center">
-                    <h2 class="modal-title"><i class="fas fa-pen"></i> Tambah Data</h2>
-                </div>
-                <div class="modal-body">
-                    <form action="" method="post" id="form-edit" enctype="multipart/form-data"
-                        class="form-horizontal form-bordered" onsubmit="return false;">
-                        <fieldset>
-                            <div class="form-group">
-                                <label class="col-md-3 control-label" for="id_produk">ID Anggota :</label>
-                                <div class="col-md-9">
-                                    <input type="text" id="ide" readonly name="ida" class="form-control" placeholder="">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-3 control-label" for="id_produk">Identitas Anggota :</label>
-                                <div class="col-md-9">
-                                    <input type="text" id="idie" name="idi" class="form-control" placeholder="">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-3 control-label" for="id_produk">Nama Anggota :</label>
-                                <div class="col-md-9">
-                                    <input type="text" id="nae" name="na" class="form-control" placeholder="">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-3 control-label" for="id_produk">Tanggal Masuk :</label>
-                                <div class="col-md-9">
-                                    <input type="date" id="tglme" name="tm" class="form-control datepicker"
-                                        placeholder="">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-3 control-label" for="id_produk">Tanggal Lahir :</label>
-                                <div class="col-md-9">
-                                    <input type="date" id="tglle" name="tl" class="form-control datepicker"
-                                        placeholder="">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-3 control-label" for="id_produk">Alamat :</label>
-                                <div class="col-md-9">
-                                    <input type="text" id="alamate" name="alt" class="form-control" placeholder="">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-3 control-label" for="id_produk">No Telp :</label>
-                                <div class="col-md-9">
-                                    <input type="text" id="tlpe" name="nt" class="form-control" placeholder="">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-3 control-label" for="id_produk">Jabatan:</label>
-                                <div class="col-md-9">
-                                    <input type="text" id="jabatane" name="jn" class="form-control" placeholder="">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-3 control-label" for="id_produk">Status Pegawai :</label>
-                                <div class="col-md-9">
-                                    <input type="text" id="spegawaie" name="sp" class="form-control"
-                                        placeholder="Tetap/Outsourching">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-3 control-label" for="id_produk">Salary :</label>
-                                <div class="col-md-9">
-                                    <input type="text" id="estimasibe" name="eb" class="form-control" placeholder="">
-                                </div>
-                            </div>
+				</div>
 
-                        </fieldset>
-                        <div class="form-group form-actions">
-                            <div class="col-xs-12 text-right">
-                                <input type="hidden" id="statusae" name="sa" value="1" class="form-control">
-                                <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
-                                <button type="submit" class="btn btn-sm btn-primary" id="btn-edit">Simpan</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Jquery JS-->
-    <script src="vendor/jquery-3.2.1.min.js"></script>
-    <!-- Bootstrap JS-->
-    <script src="vendor/bootstrap-4.1/popper.min.js"></script>
-    <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
-    <!-- Vendor JS       -->
-    <script src="vendor/slick/slick.min.js">
-    </script>
-    <script src="vendor/wow/wow.min.js"></script>
-    <script src="vendor/animsition/animsition.min.js"></script>
-    <script src="vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
-    </script>
-    <script src="vendor/counter-up/jquery.waypoints.min.js"></script>
-    <script src="vendor/counter-up/jquery.counterup.min.js">
-    </script>
-    <script src="vendor/circle-progress/circle-progress.min.js"></script>
-    <script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
-    <script src="vendor/chartjs/Chart.bundle.min.js"></script>
-    <script src="vendor/select2/select2.min.js">
-    </script>
+			</div>
+		</div>
+	</section>
+	<div id="preloader">
+		<div id="loader"></div>
+	</div>
+	<script src="assets/homepage/js/modernizr.js"></script>
+	<script src="assets/homepage/js/pace.min.js"></script>
+	<script src="assets/homepage/js/jquery-2.1.3.min.js"></script>
+	<script src="assets/homepage/js/plugins.js"></script>
+	<script src="assets/homepage/js/main.js"></script>
 
-    <!-- Main JS-->
-    <script src="js/main.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-
-            var url = "http://pkl.notaxcloth.com/mimo/restfull-api/anggota";
-            $.getJSON(url, function (result) {
-                console.log(result['data']);
-                var no = 1;
-                $.each(result['data'], function (i, field) {
-                    var id = field.id_anggota;
-                    var idi = field.id_identitas;
-                    var nama = field.nama_anggota;
-                    var alamat = field.alamat;
-                    var tm = field.tgl_masuk;
-                    var tl = field.tgl_lahir;
-                    var nt = field.no_telp;
-                    var jb = field.jabatan;
-                    var status = field.status_pegawai;
-                    var estimasi = field.estimasi_byr;
-                    var sa = field.status_anggota;
-
-                    $("#showdata").append(`
-                        <tr>
-                            <td class="text-center">` + no++ + `</td>
-                            <td class="text-center">` + id + `</td>
-                            <td class="text-center">` + idi + `</td>
-                            <td class="text-center">` + nama + `</td>
-                            <td class="text-center">` + alamat + `</td>
-                            <td class="text-center">` + tm + `</td>
-                            <td class="text-center">` + tl + `</td>
-                            <td class="text-center">` + nt + `</td>
-                            <td class="text-center">` + jb + `</td>
-                            <td class="text-center">` + status + `</td>
-                            <td class="text-center">` + estimasi + `</td>
-                            <td class="text-center"> Aktif </td>
-                            
-                            <td class="text-center">
-								<button type="button" class="btn btn-warning btn-sm edit-data" title="Edit" data-toggle="modal" id="` + id +
-                        `" ><i class="fa fa-edit"></i></button>
-                        <button type="button" class="btn btn-danger btn-sm hapus-data"  title="Hapus" data-toggle="modal"id="` +
-                        id + `"><i class="fa fa-times"></i></button>
-							</td>
-                        </tr>      
-                        
-                    `);
-                });
-                $('#tabeldata').DataTable();
-
-            });
-            $("#btn-tambah").click(function () {
-
-                //do ajax proses
-                $.ajax({
-
-                    url: "http://pkl.notaxcloth.com/mimo/restfull-api/anggota",
-                    type: "POST",
-                    data: $("#form-tambah").serialize(),
-                    dataType: "JSON",
-                    beforeSend: function () {
-                        $(".loading").html("Please wait....");
-
-                    },
-                    success: function (result) {
-
-                        if (result.status) {
-
-                            alert("Selamat, tambah data sukses");
-                            window.location.href =
-                                "index.html";
-
-                        } else {
-
-                            alert("Mohon Di Isi Semua Data");
-                        }
-
-                    },
-                    error: function (xhr, Status, err) {
-
-                        $("Terjadi error : " + Status);
-                    }
-
-                });
-
-                return false;
-            });
-            $(document).on('click', '.edit-data', function () {
-                var id = $(this).attr("id");
-                console.log('id');
-                $('#edit').modal('show');
-                $.ajax({
-                    type: "GET",
-                    url: "http://pkl.notaxcloth.com/mimo/restfull-api/anggota",
-                    dataType: "JSON",
-                    data: {
-                        id: id
-                    },
-                    success: function (data) {
-                        console.log(data['data']);
-                        $.each(data['data'], function (i, field) {
-                            var id = field.id_anggota;
-                            var idi = field.id_identitas;
-                            var nama = field.nama_anggota;
-                            var alamat = field.alamat;
-                            var tm = field.tgl_masuk;
-                            var tl = field.tgl_lahir;
-                            var nt = field.no_telp;
-                            var jb = field.jabatan;
-                            var status = field.status_pegawai;
-                            var estimasi = field.estimasi_byr;
-                            $('[id="ide"]').val(id);
-                            $('[id="idie"]').val(idi);
-                            $('[id="nae"]').val(nama);
-                            $('[id="tglme"]').val(tm);
-                            $('[id="tglle"]').val(tl);
-                            $('[id="alamate"]').val(alamat);
-                            $('[id="jabatane"]').val(jb);
-                            $('[id="tlpe"]').val(nt);
-                            $('[id="spegawaie"]').val(status);
-                            $('[id="estimasibe"]').val(estimasi);
-                        });
-                        $('#edit').modal('show');
-                    }
-                });
-            });
-            $(document).on('click', '#btn-edit', function () {
-                var data = $("#form-edit").serialize();
-                console.log(data);
-                $.ajax({
-                    url: "http://pkl.notaxcloth.com/mimo/restfull-api/anggota",
-                    type: "PUT",
-                    data: $("#form-edit").serialize(),
-                    dataType: "JSON",
-                    success: function (result) {
-                        if (result.status) {
-                            alert("Sukses, Sukses Dirubah");
-                            $('#edit').modal('hide');
-                            window.location.href =
-                                "index.html";
-                        } else {
-                            alert("Error, Gagal Dirubah");
-                        }
-                    },
-                    error: function (xhr, Status, err) {
-                        alert("Sukses, Sukses Dirubah");
-                        $('#edit').modal('hide');
-                        window.location.href =
-                            "index.html"
-                    }
-                });
-                return false;
-            });
-            $(document).on('click', '.hapus-data', function () {
-                var id = $(this).attr("id");
-                console.log(id);
-                $.ajax({
-                    url: "http://pkl.notaxcloth.com/mimo/restfull-api/anggota",
-                    type: "DELETE",
-                    data: {
-                        ida: id
-                    },
-                    success: function (result) {
-                        if (result.status) {
-                            alert("Sukses, Data Sukses dihapus");
-                            window.location.href =
-                                "index.html";
-
-                        } else {
-                            alert("Error, Data Gagal dihapus");
-                        }
-                    },
-                    error: function (xhr, Status, err) {
-                        alert("Sukses, Data Sukses dihapus");
-                        window.location.href =
-                            "index.html";
-                    }
-                });
-                return false;
-            });
-        });
-    </script>
 </body>
 
 </html>
-<!-- end document-->
